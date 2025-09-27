@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Simple Trivia Quiz</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Simple Trivia</h1>
+        </br>
+        </br>
+        <div class="text-button-container" id="container">
+            <h2 id="question">Welcome to the general knowledge quiz!</h2>
+            <button class="start-quiz" id="start" onclick="nextQuestion(event)">Start Quiz</button>
+            <button class="reset-quiz" id="reset" onclick="resetGame()" style="display: none">Reset Quiz</button>
+        </div>
+        </br>
+        <div class="answers-grid">
+            <div class="answer-button no-click" id="answer1" onclick="nextQuestion(event)">START QUIZ</div>
+            <div class="answer-button no-click" id="answer2" onclick="nextQuestion(event)">START QUIZ</div>
+            <div class="answer-button no-click" id="answer3" onclick="nextQuestion(event)">START QUIZ</div>
+            <div class="answer-button no-click" id="answer4" onclick="nextQuestion(event)">START QUIZ</div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
+
