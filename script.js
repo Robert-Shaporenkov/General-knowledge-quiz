@@ -69,9 +69,9 @@ function checkAnswer(event) {
     const CURR_OBJECT = QUESTIONS_ANSWERS[currIndex];
     if (USER_CHOICE === CURR_OBJECT.answer) {
         score++;
-        return "correct";
+        return true;
     } else {
-        return "incorrect";
+        return false;
     }
 }
 
@@ -91,12 +91,16 @@ function nextQuestion(event) {
         if (currIndex === 0) {
             switchQuestion();
         } else {
-            document.getElementById("question").textContent = `You are ${check_res}. You are on ${score} out of ${currIndex}.`;
+            if (check_res === true) {
+                document.getElementById("question").textContent = `You are correct. You are on ${score} out of ${currIndex}.`;
+            } else {
+                document.getElementById("question").textContent = `You are incorrect. You are on ${score} out of ${currIndex}. The correct answer was ${QUESTIONS_ANSWERS[currIndex - 1].answer}.`;
+            }
             toggleNoClick();
             setTimeout(() => {
                     switchQuestion();
                     toggleNoClick();
-            }, 1100);
+            }, 1500);
         }
     }
 }
